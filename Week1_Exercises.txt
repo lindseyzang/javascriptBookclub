@@ -52,13 +52,11 @@ JavaScript Book Club Exercises:
 
 	var year;
 
-	\\pretend the year is defined
+	\\pretend the year is defined - user input maybe
 
-	console.log("Is " + year + "a leap year?")
+	var leapYear = ( (year % 4 == 0) && !(year % 100 == 0) ) || (year % 400 == 0 );
 
-	leapYear = ((year % 4) == 0 ) || ( (year % 100) == 0 || ( (year % 400) == 0 ) );
-
-	console.log(leapYear)
+	console.log("Year is a leap year: " + leapYear)
 
 	\\This is hideous and terrible
 	

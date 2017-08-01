@@ -56,7 +56,7 @@ JavaScript Book Club Exercises:
 
 	console.log("Is " + year + "a leap year?")
 
-	leapYear = ((year % 4) == 0 ) && ( (year % 100) || ( (year % 400) == 0 ) );
+	leapYear = ((year % 4) == 0 ) || ( (year % 100) == 0 || ( (year % 400) == 0 ) );
 
 	console.log(leapYear)
 

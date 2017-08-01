@@ -1,0 +1,65 @@
+JavaScript Book Club Exercises:
+
+1. Let a = 5,  b = 1 and c = "5". Describe the outputs for the following scenario:
+	
+	 a = c 
+		"=" is an assignment operator, so a will be set to a value of "5"
+	 
+	 a == b
+	 
+		"==" is a soft comparator, and it will return false since the values are not equal
+
+	 a === c 
+
+		"===" is a hard operator, so it will return false since the values are not the same type
+	 
+2. Let a = 4, b = 2 and c = 0. Describe the outputs for the following scenario:
+	
+	a && c
+		Returns 0 since it's the first falsy value
+	
+	a & b
+		0100 & 0010 - neither has 1s in the same place, so it'd return 0
+	
+	b || c
+		
+		Returns 2 since it's the first truthy value, and there is one true, one false.	
+
+	a | c
+		0100 | 0000 - returns the bits of either with a 1, so it'd return 0100 or 4
+	
+	a || ( b && ( !(a & b ) ) ) 
+
+		Returns 4 since that's the first truthy value and they're both true. ( a & b = 0 -> !0 = true)
+	
+3.  A physics student gets unexpected resuts when using the code
+		
+		F = G * mass1 * mass2 / r * r
+	
+	to compute values according to Newtons Law of Gravitation. Explain the 
+	problem and correct the code.
+	Hint:
+	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+	F = G * ( (mass1 * mass2) / (r * r) )
+	Without the parathesis, the operators are read from left to right, so G is multiplied by mass1, then multiplied by mass2, etc. 
+	The paranthesis allow for the equation to be done in the order in which the equation is intended
+
+
+4. Using only what has been provided in ch.2, write a program that determines whether a given year is a leap year.
+   Recall that leap years occur on years that are multiples of 4, but do not occur on years that are multiples of 100,
+   unless they are also divisible by 400.
+
+	var year;
+
+	\\pretend the year is defined
+
+	console.log("Is " + year + "a leap year?")
+
+	leapYear = ((year % 4) == 0 ) && ( (year % 100) || ( (year % 400) == 0 ) );
+
+	console.log(leapYear)
+
+	\\This is hideous and terrible
+	
+	
